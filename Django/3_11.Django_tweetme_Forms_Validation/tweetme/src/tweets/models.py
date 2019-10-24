@@ -1,4 +1,5 @@
 from django.db import models
+from django.core.exceptions import ValidationError
 from django.conf import settings
 
 # Create your models here.
@@ -12,3 +13,9 @@ class Tweet(models.Model):
     
     def __str__(self):
         return str(self.content)
+
+    def clean(self,*args,**kwargs):
+        content = self.content
+        if content == "바보":
+            raise ValidationError("저장 할 수 없는 단어  <" + content +" >  입니다.")
+        return super(Tweet,self).clean(*args,**kwargs)
