@@ -1,0 +1,10 @@
+<h1>list_view.html</h1>
+{% for obj in object_list %}
+    <h2>{{ obj.content}}</h2><!-- object의 content -->
+    {{ obj.user}}</br><!--object의 user-->
+    {{ obj.timestamp}}</br><!--object의 timestamp-->
+    {{ obj.timestamp|timesince}}</br><!--object의 timestamp로부터 지난 시간-->
+    <hr>
+{% empty %}
+    <p> No Tweets Yet....</p>
+{% endfor%}
