@@ -1,0 +1,4 @@
+<form method='GET' action='{% url "tweet:list" %}'>
+    <input type="text" name ='qs' placeholder='Search' value="{{ request.GET.qs }}"/>
+    <input type="submit" value='Search'/>
+<form>
