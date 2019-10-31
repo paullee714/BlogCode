@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{{ object.content}}</br> <!-- object의 content -->
+{{ object.user}}</br><!--object의 user-->
+{{ object.timestamp}}</br><!--object의 timestamp-->
+{{ object.timestamp|timesince}} ago</br><!--object의 timestamp로부터 지난 시간-->
+
+{% endblock content %} 

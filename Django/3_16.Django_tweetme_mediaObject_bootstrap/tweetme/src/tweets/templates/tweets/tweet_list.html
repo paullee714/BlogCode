@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% include "tweets/search_form.html" %}
+    <br><br>
+        {% for obj in object_list %}
+        
+            <div class="media">
+                <a href="#">
+                    {% if object.image %}
+                        <img src="..." class="mr-3" alt="...">
+                    {% endif %}
+                </a>
+                <div class="media-body">
+                    {{ obj.content}}<br><!-- object의 content -->
+                    {{ obj.timestamp}}<br>
+                    작성자  {{ obj.user}} | {{ obj.timestamp|timesince}} ago | <a href="{{ obj.get_absolute_url }}"> Thread </a><br>
+                </div>
+            </div>
+            <hr>
+        {% empty %}
+        {% if request.GET.qs %}
+            <p> No Tweets found</p>
+        {% else %}
+            <p> No Tweets Yet....</p>
+        {% endif %}
+    {% endfor%}
+{% endblock content %}
