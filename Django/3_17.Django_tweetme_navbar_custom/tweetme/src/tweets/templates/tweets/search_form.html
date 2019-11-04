@@ -1,0 +1,6 @@
+<form class="form-inline" method='GET' action='{% url "tweet:list" %}'>
+    <div class="input-group mb-2 mr-sm-2">
+        <input class="form-control mr-sm-2" type="text" name ='qs' placeholder='Your Search' value="{{ request.GET.qs }}"/>
+    </div>
+    <input class="btn btn-outline-primary mb-2" type="submit" value='Search'/>
+</form>
