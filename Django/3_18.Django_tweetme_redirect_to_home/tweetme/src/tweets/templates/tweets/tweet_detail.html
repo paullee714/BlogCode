@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="row">
+
+    <div class="align-self-start col-sm-3" style="background-color:yellow;">
+        <h1>{{ object.user }} </h1>
+    </div>
+    <div class="align-self-end col-sm-9">
+        {{ object.content }}<br/>
+        <br>
+       작성일 {{object.timestamp|date }} | {{ object.timestamp | timesince }} 전
+
+    </div>
+</div>
+
+{% endblock content %} 
